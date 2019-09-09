@@ -43,7 +43,7 @@ docker-compose build identity-server
 
 ## IS4 client settings and default values
 
-Default settings that can be overriden through AppSettings.json or Environment variables.
+Default settings that can be overriden through environment variables in docker-compose environment section
 
 ```csharp
  public string ClientId { get; set; }
