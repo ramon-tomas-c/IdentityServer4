@@ -2,7 +2,15 @@ version: '3.4'
 
 services:
 
-  sql.data:
+  sql-data:
     image: microsoft/mssql-server-linux:2017-latest
+  
+  identity-server:
+    image: ${REGISTRY:-rtcplain}/identityserver:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/IdentityServer/Dockerfile    
+    depends_on:
+      - sql-data
 
  

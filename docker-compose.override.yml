@@ -1,9 +1,25 @@
 version: '3.4'
 
 services:
-  sql.data:
+  sql-data:
     environment:
       - SA_PASSWORD=Pass@word
       - ACCEPT_EULA=Y
     ports:
       - "5433:1433"
+
+  identity-server:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - ConnectionString=Server=tcp:sql-data,1433;Database=IdentityDb;User Id=sa;Password=Pass@word;
+      - IdentityUrl=http://localhost:5000
+      - Clients__0__ClientId=webappclientid
+      - Clients__0__ClientName=webappname
+      - Clients__0__WebUrls__0=http://localhost:3000
+      - Clients__0__RedirectUris__0=/
+      - Clients__0__RedirectUris__1=/#/signin-callback
+      - Clients__0__RedirectUris__2=/#/silent-renew
+      - Clients__0__PostLogoutRedirectUris__0=/
+    ports:
+      - "5000:80"  
