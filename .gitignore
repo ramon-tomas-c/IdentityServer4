@@ -108,6 +108,9 @@ ipch/
 # Visual Studio Trace Files
 *.e2e
 
+# Uncomment if you have tasks that create the project's static files in wwwroot
+**/wwwroot/lib/
+
 # TFS 2012 Local Workspace
 $tf/
 
@@ -328,3 +331,6 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+# Remove app logs
+*log.txt

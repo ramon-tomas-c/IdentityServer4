@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environment": {
+      "value": "dev"
+    },
+    "hostingPlanName": {
+      "value": "myhpdev01"
+    },
+    "skuName": {
+      "value": "S1"
+    },
+    "skuCapacity": {
+      "value": 1
+    },
+    "projectName": {
+      "value": "identity"
+    },
+    "sqlServerName": {
+      "value": "mysqlsrvdev01"
+    },
+    "adminLogin": {
+      "value": "admin"
+    },
+    "adminLoginPassword": {
+      "value": "Pass@word"
+    },
+    "collation": {
+      "value": "Modern_Spanish_CI_AS"
+    },
+    "edition": {
+      "value": "Basic"
+    },
+    "requestedServiceObjectiveName": {
+      "value": "Basic"
+    },
+    "sendgridAccountName": {
+      "value": "identity-mailing"
+    },
+    "sendgridPassword": {
+      "value": "myname@mailing8!"
+    },
+    "keyVaultName": {
+      "value": "identity-kv"
+    }
+  }
+}
